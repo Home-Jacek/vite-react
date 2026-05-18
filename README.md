@@ -1,21 +1,34 @@
-# React + TypeScript + Vite
+# Snake Game - ASP.NET Core
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A classic Snake game built with ASP.NET Core Razor Pages and HTML5 Canvas.
 
-While this project uses React, Vite supports many popular JS frameworks. [See all the supported frameworks](https://vitejs.dev/guide/#scaffolding-your-first-vite-project).
+## Features
 
-## Deploy Your Own
+- Smooth snake movement with arrow keys or WASD
+- Score tracking with persistent high score (localStorage)
+- Collision detection (walls and self)
+- Random food generation
+- Increasing speed as score grows
+- Pause/resume with P key
+- Mobile-friendly touch controls
+- Dark themed UI with glow effects
 
-Deploy your own Vite project with Vercel.
+## Prerequisites
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/vite-react&template=vite-react)
+- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 
-_Live Example: https://vite-react-example.vercel.app_
-
-### Deploying From Your Terminal
-
-You can deploy your new Vite project with a single command from your terminal using [Vercel CLI](https://vercel.com/download):
+## Getting Started
 
 ```shell
-$ vercel
+dotnet run
 ```
+
+The app will start at `http://localhost:5000` by default.
+
+## How to Play
+
+1. Click **Start Game**
+2. Use **Arrow Keys** or **WASD** to control the snake
+3. Eat the red food to grow and earn points
+4. Avoid hitting the walls or yourself
+5. Press **P** to pause/resume

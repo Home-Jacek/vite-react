@@ -1,0 +1,48 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Play";
+}
+
+<div class="game-wrapper">
+    <div class="game-header">
+        <h1>Snake Game</h1>
+        <div class="score-board">
+            <div class="score-item">
+                <span class="score-label">Score</span>
+                <span id="score" class="score-value">0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">High Score</span>
+                <span id="highScore" class="score-value">0</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div id="overlay" class="game-overlay">
+            <div class="overlay-content">
+                <h2 id="overlayTitle">Snake Game</h2>
+                <p id="overlayMessage">Use arrow keys or WASD to move</p>
+                <button id="startBtn" class="btn-start">Start Game</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-controls">
+        <p class="controls-hint">Controls: Arrow Keys or WASD &nbsp;|&nbsp; P to Pause</p>
+        <div class="mobile-controls">
+            <button class="control-btn" id="btnUp">&#9650;</button>
+            <div class="control-row">
+                <button class="control-btn" id="btnLeft">&#9664;</button>
+                <button class="control-btn" id="btnDown">&#9660;</button>
+                <button class="control-btn" id="btnRight">&#9654;</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/snake.js" asp-append-version="true"></script>
+}

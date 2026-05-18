@@ -1,42 +1,128 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1.5rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.game h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  background: linear-gradient(135deg, #646cff, #61dafb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.status {
+  font-size: 1.25rem;
+  font-weight: 600;
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
 }
 
-.card {
-  padding: 2em;
+.status.winner {
+  color: #4ade80;
 }
 
-.read-the-docs {
-  color: #888;
+.status.draw {
+  color: #facc15;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  background: #3a3a5c;
+  padding: 6px;
+  border-radius: 12px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: #1a1a2e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  color: inherit;
+  padding: 0;
+}
+
+.cell:hover:not(:disabled) {
+  background: #2a2a4a;
+  transform: scale(1.05);
+}
+
+.cell:disabled {
+  cursor: default;
+}
+
+.cell.x {
+  color: #646cff;
+}
+
+.cell.o {
+  color: #61dafb;
+}
+
+.cell.winning {
+  background: #2a2a4a;
+  box-shadow: 0 0 15px rgba(74, 222, 128, 0.4);
+}
+
+.reset-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid #646cff;
+  background: transparent;
+  color: #646cff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.reset-btn:hover {
+  background: #646cff;
+  color: #fff;
+}
+
+.score-board {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.1rem;
+}
+
+.score-board span {
+  font-weight: 600;
+}
+
+.score-x {
+  color: #646cff;
+}
+
+.score-o {
+  color: #61dafb;
+}
+
+.score-draw {
+  color: #facc15;
 }
